@@ -1,6 +1,6 @@
 package com.example.warsztat_mvvm.api
 
-import com.example.warsztat_mvvm.models.StaffListResult
+import com.example.warsztat_mvvm.models.StaffMember
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,7 +24,7 @@ class StaffListRetriever {
         service = retrofit.create(MedicalListService::class.java)
     }
 
-    fun getMedicalStaff(callback: Callback<StaffListResult>) {
+    fun getMedicalStaff(callback: Callback<List<StaffMember>>) {
         //4
         service.retrieveMedicalStaff().enqueue(callback)
     }

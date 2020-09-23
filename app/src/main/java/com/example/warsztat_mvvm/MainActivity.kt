@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.warsztat_mvvm.adapters.MedicalStaffListAdapter
-import com.example.warsztat_mvvm.models.StaffListResult
+import com.example.warsztat_mvvm.models.StaffMember
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ViewModelCallbackSupporting {
@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity(), ViewModelCallbackSupporting {
         medicalStaffList.layoutManager = LinearLayoutManager(this)
     }
 
-    override fun onListFetchedSuccessful(data: StaffListResult?) {
-        val resultList = StaffListResult(data?.staffMembers ?: emptyList())
+    override fun onListFetchedSuccessful(data: List<StaffMember>?) {
+        val resultList = data ?: emptyList()
         medicalStaffList.adapter = MedicalStaffListAdapter(resultList)
     }
 
