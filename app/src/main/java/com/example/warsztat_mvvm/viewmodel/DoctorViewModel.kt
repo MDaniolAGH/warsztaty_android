@@ -10,5 +10,6 @@ class DoctorViewModel(repository: DoctorsRepository) : ViewModel() {
 
     private val doctors: LiveData<List<Doctor>> = repository.getDoctors()
 
+    fun getActiveDoctors(): LiveData<List<Doctor>> = doctors
     fun getDoctors(): LiveData<List<Doctor>> = doctors
 }

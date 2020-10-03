@@ -19,6 +19,9 @@ class DoctorsAdapter() : RecyclerView.Adapter<DoctorsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nameText.text = doctorList[position].name
+        holder.priceText.text = "$" + doctorList[position].price.toString()
+        holder.specializationText.text = doctorList[position].specialization
+        holder.ratingText.text = "4.9"
     }
 
     override fun getItemCount(): Int = doctorList.size
@@ -29,6 +32,9 @@ class DoctorsAdapter() : RecyclerView.Adapter<DoctorsAdapter.ViewHolder>() {
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameText = itemView.name
+        val nameText = itemView.doctor_name
+        val specializationText = itemView.doctor_specialization
+        val ratingText = itemView.doctor_rating
+        val priceText = itemView.doctor_price
     }
 }

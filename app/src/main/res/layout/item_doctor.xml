@@ -6,15 +6,74 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/doctor_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Jan Kowalski"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:src="@drawable/doctor"
+        />
+
+    <TextView
+        android:id="@+id/doctor_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/doctor_image"
+        app:layout_constraintTop_toTopOf="@id/doctor_image"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        tools:text="Jan Kowalski" />
+
+    <TextView
+        android:id="@+id/doctor_specialization"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/doctor_image"
+        app:layout_constraintTop_toBottomOf="@id/doctor_name"
+        android:textSize="16sp"
+        tools:text="Allergists" />
+
+    <ImageView
+        android:id="@+id/doctor_star"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/doctor_image"
+        app:layout_constraintTop_toBottomOf="@id/doctor_specialization"
+        android:src="@drawable/star"
+        />
+
+    <TextView
+        android:id="@+id/doctor_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/doctor_star"
+        app:layout_constraintTop_toTopOf="@id/doctor_star"
+        app:layout_constraintBottom_toBottomOf="@id/doctor_star"
+        tools:text="4.9"/>
+
+    <TextView
+        android:id="@+id/doctor_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="#81C784"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$50"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

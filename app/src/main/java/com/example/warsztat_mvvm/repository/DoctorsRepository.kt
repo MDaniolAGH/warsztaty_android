@@ -6,4 +6,5 @@ import com.example.warsztat_mvvm.model.Doctor
 interface DoctorsRepository {
 
     fun getDoctors(): LiveData<List<Doctor>>
+
 }

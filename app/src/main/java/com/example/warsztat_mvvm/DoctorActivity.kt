@@ -2,6 +2,7 @@ package com.example.warsztat_mvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,12 +14,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class DoctorActivity : AppCompatActivity() {
 
+    private var logVal: Int = Log.d("LOG1", "Kod w logVal.")
+
+    init {
+        Log.d("LOG1", "Kod w init.")
+    }
+
     private lateinit var viewModel: DoctorViewModel
     private lateinit var viewModelFactory: DoctorViewModelFactory
 
     private lateinit var adapter: DoctorsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("LOG1", "Kod w onCreate().")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
